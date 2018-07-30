@@ -43,7 +43,7 @@ class BackLogController extends Controller
             'assigneeId'  => 71558,
         ]);
 
-        return redirect(route('backlog.activity'))->with();
+        return redirect('https://acdev.backlog.com/projects/DAILYREPORT');
     }
 
     public function activity_done()

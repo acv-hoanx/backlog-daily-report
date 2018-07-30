@@ -21,6 +21,7 @@
                 </div>
                 <div class="card-footer">
                     <form method="post">
+                        @csrf
                         <button type="submit" class="btn btn-primary float-right">
                             Submit to DAILYREPORT
                         </button>
