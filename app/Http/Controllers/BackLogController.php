@@ -32,7 +32,7 @@ class BackLogController extends Controller
     public function report()
     {
         $projectList = $this->_getActivityLog();
-        $content     = view('report-template', compact('projectList'))->render();
+        $content     = view('report-template-submit', compact('projectList'))->render();
 
         $projectReportId = 35916; // DAYLYREPORT
         $summary         = 'Report: ' . Carbon::today()->format('d/m/Y');
@@ -129,7 +129,9 @@ class BackLogController extends Controller
         ]);
         if ($activityList) {
             foreach ($activityList as $activity) {
-                $inDay = Carbon::parse($activity->created)->diffInDays(Carbon::today());
+                $created = Carbon::parse($activity->created)->format('Y-m-d');
+                $inDay = Carbon::today()->diffInDays($created);
+
 
                 if ($inDay == 0 && isset($activity->content->changes)
                     && ! in_array($activity->content->id, $contentIDs)) {
