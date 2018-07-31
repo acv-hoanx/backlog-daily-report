@@ -8,4 +8,5 @@ Team: ''{{ Auth::user()->team }}''
 @foreach($projects as $p)
 - {{$p['task']}} : {{$p['actualHours']}}H
 @endforeach
+
 @endforeach

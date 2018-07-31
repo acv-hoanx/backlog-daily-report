@@ -5,8 +5,9 @@
 -------------
 
 @foreach($projectList as $pName => $projects)
-######{{$pName}}:
+######**{{$pName}}:**
 @foreach($projects as $p)
 - {{$p['task']}} : {{$p['actualHours']}}H
 @endforeach
+
 @endforeach
