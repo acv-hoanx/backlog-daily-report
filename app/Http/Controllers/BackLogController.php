@@ -147,8 +147,15 @@ class BackLogController extends Controller
 
                     foreach ($activity->content->changes as $change) {
                         if ($change->field == 'actualHours') {
+
+                            if ((float)$change->new_value > (float)$change->old_value) {
+                                $actualHours = (float)$change->new_value - (float)$change->old_value;
+                            } else {
+                                $actualHours = (float)$change->new_value;
+                            }
+
                             $projectList[$activity->project->name][$pi]['task']        = $activity->content->summary;
-                            $projectList[$activity->project->name][$pi]['actualHours'] = (float)$change->new_value - (float)$change->old_value;
+                            $projectList[$activity->project->name][$pi]['actualHours'] = $actualHours;
                         }
                     }
 
