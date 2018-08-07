@@ -7,7 +7,7 @@
 @foreach($projectList as $pName => $projects)
 ######**{{$pName}}:**
 @foreach($projects as $p)
-- {{$p['task']}} : {{$p['actualHours']}}H
+- [{{$p['url_title']}}]({{$p['url_task']}}) {{$p['task']}}: **{{$p['actualHours']}}H**
 @endforeach
 
 @endforeach

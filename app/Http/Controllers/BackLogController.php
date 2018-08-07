@@ -110,6 +110,7 @@ class BackLogController extends Controller
 
     private function _getActivityLog()
     {
+        $backLogURL  = 'https://acdev.backlog.com/';
         $apiKey      = Auth::user()->backlog_api_key;
         $spaceID     = 'acdev';
         $projectList = $projectKey = $contentIDs = [];
@@ -155,6 +156,8 @@ class BackLogController extends Controller
                             }
 
                             $projectList[$activity->project->name][$pi]['task']        = $activity->content->summary;
+                            $projectList[$activity->project->name][$pi]['url_task']    = $backLogURL.'view/'.$activity->project->projectKey.'-'.$activity->content->key_id;
+                            $projectList[$activity->project->name][$pi]['url_title']    = $activity->project->projectKey.'-'.$activity->content->key_id;
                             $projectList[$activity->project->name][$pi]['actualHours'] = $actualHours;
                         }
                     }
