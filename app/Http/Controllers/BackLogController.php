@@ -134,7 +134,8 @@ class BackLogController extends Controller
                 $inDay = Carbon::today()->diffInDays($created);
 
 
-                if ($inDay == 0 && isset($activity->content->changes)
+                if ($inDay == 0 && isset($activity->content->id)
+                    && isset($activity->content->changes)
                     && ! in_array($activity->content->id, $contentIDs)) {
 
                     $contentIDs[] = $activity->content->id;
