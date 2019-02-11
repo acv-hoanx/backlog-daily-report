@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>HoaNX - Tools</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -71,6 +71,7 @@
                     @auth
                         <a class="nav-link" href="{{ route('backlog.activity') }}">{{ __('Backlog Activity') }}</a>
                     @else
+                        <a href="{{ route('tncn') }}">Thuế TNCN</a>
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
                     @endauth
@@ -79,7 +80,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Welcome automated reporting system
+                    Welcome!!
                 </div>
             </div>
         </div>

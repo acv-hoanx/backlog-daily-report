@@ -17,6 +17,9 @@ Route::get('/', function () {
 Route::get('/backlog/activity', 'BackLogController@activity')->name('backlog.activity');
 Route::post('/backlog/activity', 'BackLogController@report')->name('backlog.report');
 
+Route::get('/tncn/index', 'TNCNController@index')->name('tncn');
+Route::post('/tncn/index', 'TNCNController@post')->name('tncn.post');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
